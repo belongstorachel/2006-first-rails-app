@@ -1,0 +1,61 @@
+<html>
+<head>
+  <title>Workorders: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+  
+<script type="text/javascript">
+
+startList = function() {
+if (document.all&&document.getElementById) {
+navRoot = document.getElementById("nav");
+for (i=0; i<navRoot.childNodes.length; i++) {
+node = navRoot.childNodes[i];
+if (node.nodeName=="LI") {
+node.onmouseover=function() {
+this.className+=" over";
+  }
+  node.onmouseout=function() {
+  this.className=this.className.replace(" over", "");
+   }
+   }
+  }
+ }
+}
+window.onload=startList;
+  </script> 
+</head>
+<body>
+
+
+
+
+
+<ul id="nav"> 
+<li><a href="#"><strong>Menu:</strong></a>
+ <ul>
+  <li><%= link_to 'Home', :action => 'index' %></li> 
+  <li><a href="#">Workorders</a> 
+    <ul> 
+      <li><%= link_to 'New Work Order', :action => 'new' %></li> 
+      <li><%= link_to 'Open Workorders', :action => 'index' %></li> 
+      <li><%= link_to 'All Workorders', :action => 'list' %></li>
+      <li><%= link_to 'List All Details', :action => 'listall' %></li>
+    </ul> 
+  </li> 
+  <li><%= link_to 'Edit Technicians', :controller => 'technicians', :action => 'index' %> </li> 
+    </ul> 
+  </li> 
+ </ul>
+</li>
+</ul> 
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+<%= @content_for_layout %>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>ISP Work Orders: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+</head>
+<body>
+
+
+<ul id="nav"> 
+<li><a href="#"><strong>Menu:</strong></a>
+ <ul>
+  <li><%= link_to 'Home', :action => 'index' %></li> 
+  <li><a href="#">Workorders</a> 
+    <ul> 
+      <li><%= link_to 'New Work Order', :controller => 'workorders', :action => 'new' %></li> 
+      <li><%= link_to 'Open Workorders',:controller => 'workorders', :action => 'index' %></li> 
+      <li><%= link_to 'All Workorders', :controller => 'workorders', :action => 'list' %></li>
+      <li><%= link_to 'List All Details',:controller => 'workorders', :action => 'listall' %></li>
+    </ul> 
+  </li> 
+  <li><%= link_to 'Edit Technicians', :controller => 'technicians', :action => 'index' %> </li> 
+    </ul> 
+  </li> 
+ </ul>
+</li>
+</ul> 
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+<%= @content_for_layout %>
+
+</body>
+</html>

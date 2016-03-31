@@ -1,0 +1,34 @@
+<h1>ISP Work Orders</h1>
+
+
+
+
+<table cellpadding="5" border="1">
+<tr>
+    <td>Work Order Number</td>
+    <td>Work Order Status</td>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>Assigned to</td>
+    <td colspan="2" align="center">Actions</td>
+</tr>
+
+<% for workorder in @workorders %>
+
+
+<tr>
+  <td align="center"><%= link_to workorder.id, :action => 'show', :id => workorder %></td>
+  <td><%= workorder.status.status %></td>
+  <td><%= workorder.first_name %></td>
+  <td><%= workorder.last_name %></td>
+  <td><%= workorder.technician.tech %>
+  <td><%= link_to 'Edit', :action => 'edit', :id => workorder %></td>
+  <td><%= link_to 'Print', :action => 'print', :id => workorder %></td>
+  
+
+</tr>
+
+<% end %>
+
+</table>
+<p><strong><%= link_to 'New workorder', :action => 'new' %></strong></p>

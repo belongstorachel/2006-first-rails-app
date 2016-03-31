@@ -1,0 +1,64 @@
+<h1>Updating Workorder # <%= @workorder.id %></h1>
+ Date Created: <strong><%= @workorder.created_on.strftime("%Y-%m-%d @ %I:%m %p") %></strong> &nbsp; | &nbsp; Last Updated: <strong><%= @workorder.updated_on.strftime("%Y-%m-%d @ %I:%M %p") %></strong></p>
+<%= start_form_tag :action => 'update', :id => @workorder %>
+<table border="1" cellpadding="5">
+<tr>
+  <td>Change Status: <select name="workorder[status_id]"><% @statuses.each do |status| %>
+       <option value="<%= status.id %>" 
+         <%= 'selected' if status.id == @workorder.status_id %>>
+         <%= status.status %>
+       </option>
+   <% end %>
+  </select></td>
+  <td> 
+  Assigned to Tech: <select name="workorder[technician_id]">
+   <% @technicians.each do |technician| %>
+       <option value="<%= technician.id %>" 
+         <%= 'selected' if technician.id == @workorder.technician_id %>>
+         <%= technician.tech %>
+       </option>
+   <% end %>
+  </select></td>
+</tr>
+<tr>
+  <td>First Name: <%= text_field("workorder", "first_name", "size" => 30 ) %><br />Last Name: <%= text_field("workorder", "last_name", "size" => 30 ) %></td>
+  <td> Username: <%= text_field("workorder", "last_name", "size" => 30 ) %> </td>
+</tr><tr>
+  <td><p align="center"><strong>Description of Problem:</strong></p> <%= text_area("workorder", "description_of_problem", "cols" => 50, "rows" => 6 ) %> </td>
+  <td><p align="center"><strong>Estimate Notes: </strong></p><%= text_area("workorder", "estimate_notes", "cols" => 50, "rows" => 6 ) %></td>
+</tr><tr>
+  <td><p align="center"><strong>Work Done:</strong></p> <%= text_area("workorder", "work_done", "cols" => 50, "rows" => 6 ) %></td>
+  <td><p align="center"><strong>Call Log:</strong></p> <%= text_area("workorder", "call_log", "cols" => 50, "rows" => 6 ) %></td>
+</tr><tr>
+  <td rowspan="3"><p align="center"><strong>Parts Used:</strong></p><%= text_area("workorder", "parts_used", "cols" => 50, "rows" => 6 ) %></td>
+  <td>Labor Cost: <%= text_field("workorder", "labor_cost", "size" => 20 ) %></td>
+</tr><tr>
+
+  <td>Parts Cost: <%= text_field("workorder", "parts_cost", "size" => 20 ) %> <br /> (tax not included)</td>
+</tr>
+<tr>
+
+  <td><p align="center">Total: <%= fmt_dollars(@workorder.total) %></p></td>
+</tr>
+
+</table>
+
+
+
+
+   
+ 
+  
+
+
+
+<br />--------------------------------------
+
+  <%= submit_tag 'Update' %>
+--------------------------------------<br />
+
+
+<%= end_form_tag %>
+
+<%= link_to 'Show', :action => 'show', :id => @workorder %> |
+<%= link_to 'Back', :action => 'index' %>

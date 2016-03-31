@@ -1,0 +1,132 @@
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+table{
+
+border-color: transparent;
+
+}
+th {
+border-color: transparent;
+}
+
+td {
+ vertical-align: top;
+color: black;
+border-color: black;
+border-width: 1px;
+border-style: solid;
+
+ }
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#ErrorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#ErrorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#ErrorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#ErrorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+
+#nav, #nav ul { /* all lists */
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	line-height: 1;
+}
+
+#nav a {
+	display: block;
+	width: 10em;
+}
+
+#nav li { /* all list items */
+	float: left;
+	width: 10em; /* width needed or else Opera goes nuts */
+}
+
+#nav li ul { /* second-level lists */
+	position: absolute;
+	background: #ccc;
+	width: 10em;
+	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+}
+
+#nav li ul ul { /* third-and-above-level lists */
+	margin: -1em 0 0 10em;
+}
+
+#nav li:hover ul ul, #nav li.sfhover ul ul {
+	left: -999em;
+}
+
+#nav li:hover ul, #nav li li:hover ul, #nav li.sfhover ul, #nav li li.sfhover ul { /* lists nested under hovered list items */
+	left: auto;
+}
+
+#content {
+	clear: left;
+	color: #ccc;
+}

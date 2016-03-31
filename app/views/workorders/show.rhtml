@@ -1,0 +1,55 @@
+
+<%= link_to 'Edit', :action => 'edit', :id => @workorder %>
+ 
+<table border="1" width="750" cellpadding="5">
+<th colspan="2"><h1>Workorder # <%= @workorder.id %></h1> 
+</th>
+<tr>
+  <td>Date Created: <strong><%= @workorder.created_on.strftime("%Y-%m-%d @ %I:%m %p") %></strong></p>
+</td>
+  <td>Last Updated: <strong><%= @workorder.updated_on.strftime("%Y-%m-%d @ %I:%M %p") %></strong</td>
+<tr>
+  <td><strong>Status:</strong> <%= @workorder.status.status %></td>
+  <td><strong>Assigned to Tech:</strong> <%= @workorder.technician.tech %></td>
+</tr>
+<tr>
+  <td><strong>First Name:</strong> <%= @workorder.first_name %><br /><strong>Last Name:</strong> <%= @workorder.last_name  %></td>
+  <td><strong>Username:</strong> <%= @workorder.last_name %></td>
+</tr><tr>
+  <td colspan="2"><p><strong>Description of Problem:</strong></p> <%= @workorder.description_of_problem %> </td>
+</tr><tr>
+  <td colspan="2"><p><strong>Estimate Notes: </strong></p><%= @workorder.estimate_notes %></td>
+</tr><tr>
+  <td colspan="2"><p><strong>Work Done:</strong></p> <%= @workorder.work_done %></td>
+</tr><tr>
+  <td colspan="2"><p><strong>Call Log:</strong></p> <%= @workorder.call_log %></td>
+</tr><tr>
+  <td rowspan="3"><p><strong>Parts Used:</strong></p> <%= @workorder.parts_used %></td>
+  <td><strong>Labor Cost:</strong> <%= fmt_dollars(@workorder.labor_cost) %></td>
+</tr><tr>
+  
+  <td><strong>Parts Cost:</strong> <%= fmt_dollars(@workorder.parts_cost) %></td>
+</tr>
+<tr>
+  
+  <td><h2><strong>Total:</strong> <%= fmt_dollars(@workorder.total) %></h2></td>
+</tr>
+
+</table>
+
+
+<%= link_to 'Back', :action => 'index' %>
+
+   
+ 
+  
+
+
+
+
+
+
+
+
+
+

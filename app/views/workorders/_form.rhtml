@@ -1,0 +1,46 @@
+<%= error_messages_for 'workorder' %>
+
+<!--[form:workorder]-->
+<p><label for="workorder_created_on">Created on</label><br/>
+<%= datetime_select 'workorder', 'created_on'  %></p>
+
+<p><label for="workorder_updated_on">Updated on</label><br/>
+<%= datetime_select 'workorder', 'updated_on'  %></p>
+
+<p><label for="workorder_first_name">First name</label><br/>
+<%= text_field 'workorder', 'first_name'  %></p>
+
+<p><label for="workorder_last_name">Last name</label><br/>
+<%= text_field 'workorder', 'last_name'  %></p>
+
+<p><label for="workorder_username">Username</label><br/>
+<%= text_field 'workorder', 'username'  %></p>
+
+<p><label for="workorder_contact_number">Contact number</label><br/>
+<%= text_field 'workorder', 'contact_number'  %></p>
+
+<p><label for="workorder_description_of_problem">Description of problem</label><br/>
+<%= text_area 'workorder', 'description_of_problem'  %></p>
+
+<p><label for="workorder_estimate_notes">Estimate notes</label><br/>
+<%= text_area 'workorder', 'estimate_notes'  %></p>
+
+<p><label for="workorder_work_done">Work done</label><br/>
+<%= text_area 'workorder', 'work_done'  %></p>
+
+<p><label for="workorder_call_log">Call log</label><br/>
+<%= text_area 'workorder', 'call_log'  %></p>
+
+<p><label for="workorder_parts_used">Parts used</label><br/>
+<%= text_area 'workorder', 'parts_used'  %></p>
+
+<p><label for="workorder_labor_cost">Labor cost</label><br/>
+<%= text_field 'workorder', 'labor_cost'  %></p>
+
+<p><label for="workorder_parts_cost">Parts cost</label><br/>
+<%= text_field 'workorder', 'parts_cost'  %></p>
+
+<p><label for="workorder_total">Total</label><br/>
+<%= text_field 'workorder', 'total'  %></p>
+<!--[eoform:workorder]-->
+

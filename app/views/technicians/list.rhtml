@@ -1,0 +1,27 @@
+
+<h1>Listing technicians</h1>
+<%= link_to 'New technician', :action => 'new' %>
+<table cellpadding="10">
+  <tr>
+  <% for column in Technician.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for technician in @technicians %>
+  <tr>
+  <% for column in Technician.content_columns %>
+    <td><%=h technician.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Edit', :action => 'edit', :id => technician %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => technician }, :confirm => 'Are you sure?' %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @technician_pages.current.previous } if @technician_pages.current.previous %>
+<%= link_to 'Next page', { :page => @technician_pages.current.next } if @technician_pages.current.next %> 
+
+<br />
+
+

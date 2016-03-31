@@ -1,0 +1,36 @@
+<h1>New workorder</h1>
+ 
+<%= start_form_tag :action => 'create' %>
+<table border="1" cellpadding="5">
+<tr>
+  <td>Username: <%= text_field("workorder", "last_name", "size" => 30 ) %> </td>
+
+</tr>
+<tr>
+  <td>First Name: <%= text_field("workorder", "first_name", "size" => 30 ) %><br />Last Name: <%= text_field("workorder", "last_name", "size" => 30 ) %></td>
+
+</tr>
+<tr>
+   <td>Phone Number: <%= text_field("workorder", "contact_number", "size" => 30 ) %></td>
+</tr>
+<tr>
+  <td><p align="center"><strong>Description of Problem:</strong></p> <%= text_area("workorder", "description_of_problem", "cols" => 50, "rows" => 6 ) %> </td>
+  </tr>
+<tr>
+  <td>Assigned to Tech: <select name="workorder[technician_id]">
+   <% @technicians.each do |technician| %>
+       <option value="<%= technician.id %>" 
+         <%= 'selected' if technician.id == @workorder.technician_id %>>
+         <%= technician.tech %>
+       </option>
+   <% end %>
+  </select></td>
+
+</tr>
+
+</table>
+
+  <%= submit_tag "Create" %>
+<%= end_form_tag %>
+
+<%= link_to 'Back', :action => 'index' %>

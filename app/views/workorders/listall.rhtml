@@ -1,0 +1,27 @@
+<h1>Listing workorders</h1>
+
+<table width="2500">
+  <tr>
+  <% for column in Workorder.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for workorder in @workorders %>
+  <tr>
+  <% for column in Workorder.content_columns %>
+    <td><%=h workorder.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => workorder %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => workorder %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => workorder }, :confirm => 'Are you sure?' %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to '<< Previous page ', { :page => @workorder_pages.current.previous } if @workorder_pages.current.previous %>
+<%= link_to 'Next page >>', { :page => @workorder_pages.current.next } if @workorder_pages.current.next %> 
+
+<br /><br />
+
+<%= link_to 'New workorder', :action => 'new' %>
